@@ -1,0 +1,17 @@
+{
+  "name": "souqdz-api",
+  "version": "1.0.0",
+  "description": "SouqDZ - a small online shop API. Intentionally insecure. Do not deploy.",
+  "private": true,
+  "scripts": {
+    "seed": "node --no-warnings src/seed.js",
+    "start": "node --env-file=.env --no-warnings src/server.js",
+    "attack": "node scripts/attack.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
