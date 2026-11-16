@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SouqDZ</title>
+<h1>SouqDZ</h1>
+<input id="q" placeholder="Search a product"> <button onclick="load()">Search</button>
+<ul id="list"></ul>
+<script>
+async function load() {
+  const r = await fetch('/api/products?search=' + document.getElementById('q').value);
+  const products = await r.json();
+  document.getElementById('list').innerHTML = products
+    .map((p) => `<li><a href="/products/${p.id}/page">${p.name}</a> - ${p.price} DZD</li>`).join('');
+}
+load();
+</script>
